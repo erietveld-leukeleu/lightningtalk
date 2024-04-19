@@ -8,8 +8,8 @@ const leaveToClass = computed(() => props.animationDirection ? '-translate-y-[15
 </script>
 
 <template>
-    <transition appear :duration="300" :enter-from-class="enterFromClass" enter-active-class="transition duration-300" :leave-to-class="leaveToClass" leave-active-class="transition duration-300">
+    <Transition appear :duration="300" :enter-from-class="enterFromClass" enter-active-class="transition duration-300" :leave-to-class="leaveToClass" leave-active-class="transition duration-300">
 
         <slot />
-    </transition>
+    </Transition>
 </template>

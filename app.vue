@@ -9,7 +9,7 @@
 
   onMounted(()=>{
     if(slideHolder.value) {
-      totalSlides.value = slideHolder.value.childNodes.length - 1
+      totalSlides.value = slideHolder.value.childNodes.length
     }
     if(presentationControls.value) {
       presentationControls.value.focus()
@@ -60,16 +60,35 @@
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
             <SlideList v-if="currentSlide === 2">
-              <li>Lightweight animation library</li>
-              <li>High quality animations</li>
-              <li>Front-end libraries for Vue</li>
-              <li>Text-based (JSON) animation files</li>
-              <li>275K companies (Microsoft, Netflix, Disney) use Lottie</li>
+              <li>15% of the world's population has a disability</li>
+              <li>Visual impairments, motor disabilities, hearing, cognitive, speech disorders</li>
+              <li class="focus"><br /><br />97% of websites are not Web Content Accessibility Guidelines (WCAG) compliant</li>
             </SlideList>
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideList v-if="currentSlide === 3">
-              <li>Timeline-based animation creation</li>
+            <SlideList v-if="currentSlide === 3 || currentSlide === 4">
+              <li v-if="currentSlide !== 4"><strong>P O U R</strong></li>
+              <li>Perceivable</li>
+              <SlideListItemAnimation>
+                <li v-if="currentSlide === 4">Captions, descriptions, display orientation, contrast, resizing</li>
+              </SlideListItemAnimation>
+              <li>Operable</li>
+              <SlideListItemAnimation>
+                <li v-if="currentSlide === 4">Keyboard usage, enough reading time, stop moving content</li>
+              </SlideListItemAnimation>
+              <li>Understandable</li>
+              <SlideListItemAnimation>
+                <li v-if="currentSlide === 4">Specified language, labels, order of navigation</li>
+              </SlideListItemAnimation>
+              <li>Robust</li>
+              <SlideListItemAnimation>
+                <li v-if="currentSlide === 4">Future-proof, semantic code, role of components</li>
+              </SlideListItemAnimation>
+            </SlideList>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideList v-if="currentSlide === 4">
+              <li></li>
               <li></li>
             </SlideList>
           </SlideHolder>
@@ -87,10 +106,13 @@
             <SlideTitle label="Talk" title="Accessibility in Vue / Nuxt" subtitle="Rules and best practices" v-if="currentSlide === 1" />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideTitle title="Basic accessibility rules" v-if="currentSlide === 2" link="https://lottiefiles.com/" linktext="Lottiefiles.com" />
+            <SlideTitle v-if="currentSlide === 2" title="Accessibility" subtitle="for people with a disability" />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideTitle title="Thanks" v-if="currentSlide === 3" />
+            <SlideTitle v-if="currentSlide === 3 || currentSlide === 4" title="Basic accessibility rules" subtitle="WCAG 2.2 (October 2023)" />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle title="Thanks" v-if="currentSlide === 5" />
           </SlideHolder>
         </div>
       </div>
