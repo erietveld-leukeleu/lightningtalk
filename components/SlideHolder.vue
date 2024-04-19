@@ -1,6 +1,15 @@
+<script setup lang="ts">
+const props = defineProps<{
+    animationDirection?: 'UP' | 'DOWN'
+}>()    
+
+const enterFromClass = computed(() => !props.animationDirection ? '-translate-y-[150%] opacity-0' : 'translate-y-[150%] opacity-0' )
+const leaveToClass = computed(() => props.animationDirection ? '-translate-y-[150%] opacity-0' : 'translate-y-[150%] opacity-0' )
+</script>
 
 <template>
-    <transition appear enter-from-class="translate-x-[150%] opacity-0" enter-active-class="transition duration-300" leave-to-class="-translate-x-[150%] opacity-0" leave-active-class="transition duration-300" class="absolute">
+    <transition appear :duration="300" :enter-from-class="enterFromClass" enter-active-class="transition duration-300" :leave-to-class="leaveToClass" leave-active-class="transition duration-300">
+
         <slot />
     </transition>
 </template>
