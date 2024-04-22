@@ -31,6 +31,9 @@ export default defineNuxtConfig({
           backgroundImage: {
             'leukeleugradient': 'radial-gradient(169.40% 89.55% at 94.76% 6.29%, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%)',
           },
+          boxShadow: {
+            'leukeleu': '0 35px 120px -15px rgba(235, 77, 127, 0.1), 0 -35px 120px -15px rgba(235, 77, 127, 0.1) ',
+          }
         }
       },
     }

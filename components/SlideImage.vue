@@ -1,13 +1,14 @@
 <script setup lang="ts">
 defineProps<{
-    image: string
-}>()    
+  image: string;
+  shadow?: boolean;
+}>();
 </script>
 
 <template>
-    <section>
-        <div class="relative -left-10 bg-leukeleudark">
-            <NuxtImg :src="image" loading="lazy" width="1100" class="block" />
-        </div>
-    </section>
+  <section>
+    <div class="relative bg-leukeleudark shadow-leukeleu">
+      <NuxtImg :src="image" loading="lazy" width="1100" class="block" />
+    </div>
+  </section>
 </template>
