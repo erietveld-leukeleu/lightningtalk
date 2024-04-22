@@ -13,7 +13,7 @@ defineProps<{
 <template>
     <section>
         <span class="bg-leukeleu font-leukeleucontent tracking-wider inline-block py-3 px-5 rounded-full mb-6 uppercase" v-if="label">{{ label }}</span>
-        <h1 class="text-xxl" v-if="title">{{ title }}</h1>
+        <h1 class="text-xxl mb-5" v-if="title">{{ title }}</h1>
         <h2 class="text-lg" v-if="subtitle">{{ subtitle }}</h2>
         <NuxtLink :to="link" target="_blank" rel="noopener" class="bg-leukeleu font-leukeleucontent tracking-wider inline-block py-3 px-5 rounded-full mb-6 uppercase mt-8" v-if="link">{{ linktext }} &rarr;</NuxtLink>
         <div class="absolute bottom-[200px] -left-1/2 w-[900px]" v-if="image">

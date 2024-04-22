@@ -3,8 +3,8 @@ const props = defineProps<{
     animationDirection?: 'UP' | 'DOWN'
 }>()    
 
-const enterFromClass = computed(() => !props.animationDirection ? '-translate-y-[150%] opacity-0' : 'translate-y-[150%] opacity-0' )
-const leaveToClass = computed(() => props.animationDirection ? '-translate-y-[150%] opacity-0' : 'translate-y-[150%] opacity-0' )
+const enterFromClass = computed(() => !props.animationDirection ? '-translate-y-[150%] opacity-0 translate-y-[150%] scale-50' : 'translate-y-[150%] opacity-0 -translate-y-[150% scale-50' )
+const leaveToClass = computed(() => props.animationDirection ? 'translate-y-[150%] opacity-0 translate-y-[150%]' : '-translate-y-[150%] opacity-0 translate-y-[150%]' )
 </script>
 
 <template>
