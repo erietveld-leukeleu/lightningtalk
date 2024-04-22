@@ -68,7 +68,7 @@
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
             <SlideList v-if="currentSlide === 2">
-              <li>27% of Europe's population has a disability</li> <!-- 135 million people -->
+              <li>27% of Europe's population has a disability</li> <!-- 135 million people, worldwide 1/6 -->
               <li>Visual impairments, motor disabilities, hearing, cognitive, speech disorders</li>
               <li class="focus"><br /><br />97% of websites are not Web Content Accessibility Guidelines (WCAG) compliant</li>
             </SlideList>
@@ -103,13 +103,29 @@
               <li>OSs, webshops, e-books, streaming services, internet banking</li>
               <li>Checks contrast, semantics, alternative texts, language and links</li>
               <li>50% of Dutch webshops not ready</li>
-              <li>.. some exceptions</li> <!-- Like the public broadcaster NPO, schools, non-government health organizations, postal services -->
+              <li>.. some exceptions to this law</li> <!-- Like the public broadcaster NPO, schools, non-government health organizations, postal services -->
             </SlideList>
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
             <SlideList v-if="currentSlide === 6">
-              <li></li>
+              <li><strong>Focus on</strong></li>
+              <li>Keyboard navigation</li>
+              <li>Semantic HTML</li>
+              <li>Helpful links</li>
+              <li>Focus management</li>
+              <li>Accessible forms</li>
+              <li><code>aria</code> attributes</li>
             </SlideList>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideCode v-if="currentSlide === 7">
+              test
+            </SlideCode>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideCode v-if="currentSlide === 8">
+              
+            </SlideCode>
           </SlideHolder>
         </div>
         <div :class="{'!bg-leukeleu': currentSlide === totalSlides || currentSlide === 6}" class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 flex justify-center items-center text-center relative group overflow-hidden transition-colors [&>*]:absolute" ref="slideHolder">
@@ -134,7 +150,10 @@
             <SlideTitle v-if="currentSlide === 5" title="Follow the law!" />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideTitle v-if="currentSlide === 6" title="" />
+            <SlideTitle v-if="currentSlide === 6" title="How Vue can handle this" />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle v-if="currentSlide === 7" title="Keyboard navigation" subtitle="Focus in Vue" />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
             <SlideTitle title="Thanks" v-if="currentSlide === 10" />
