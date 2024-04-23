@@ -67,7 +67,7 @@ const toPreviousSlide = () => {
       </div>
       <div class="px-6 pt-6 pb-9 flex min-h-screen relative z-10">
         <div
-          class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 max-w-[800px] min-w-[600px] flex justify-center items-center text-center relative group overflow-hidden mr-6 [&>*]:absolute"
+          class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 max-w-[800px] min-w-[750px] flex justify-center items-center text-center relative group overflow-hidden mr-6 [&>*]:absolute"
         >
           <div
             v-if="currentSlide !== totalSlides && currentSlide !== 1"
@@ -153,7 +153,15 @@ const toPreviousSlide = () => {
             </SlideList>
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideList v-if="currentSlide === 6">
+            <SlideImage
+              image="/screenshots/ecommerce.png"
+              v-if="currentSlide === 6"
+            >
+            </SlideImage>
+            <!-- Can lead to 15% more revenue in e-commerce platforms, also PR -->
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideList v-if="currentSlide === 7">
               <li><strong>Focus on</strong></li>
               <li>Keyboard navigation</li>
               <li>Semantic HTML</li>
@@ -166,18 +174,84 @@ const toPreviousSlide = () => {
           <SlideHolder :animationDirection="animationDirection">
             <SlideImage
               image="/screenshots/arialabel.png"
-              v-if="currentSlide === 7"
+              v-if="currentSlide === 8"
               :shadow="true"
             >
             </SlideImage>
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideCode v-if="currentSlide === 8"> </SlideCode>
+            <SlideImage
+              image="/screenshots/accessibilitylandmarks.png"
+              v-if="currentSlide === 9"
+              :shadow="true"
+            >
+            </SlideImage>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideImage
+              image="/screenshots/skiplink.png"
+              v-if="currentSlide === 10"
+              :shadow="true"
+            >
+            </SlideImage>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideImage
+              image="/screenshots/focusmanagement.png"
+              v-if="currentSlide === 11"
+              :shadow="true"
+            >
+            </SlideImage>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideImage
+              image="/screenshots/colormodes.png"
+              v-if="currentSlide === 12"
+              :shadow="true"
+            >
+            </SlideImage>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideImage
+              image="/screenshots/tailwind.png"
+              v-if="currentSlide === 13"
+              :shadow="true"
+            >
+            </SlideImage>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideImage
+              image="/screenshots/eslint.png"
+              v-if="currentSlide === 14"
+              :shadow="true"
+            >
+            </SlideImage>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideList v-if="currentSlide === 15">
+              <li>
+                Do simple things always: like <code>alt</code> texts in images
+              </li>
+              <li>Use packages to rapidly develop accessible code</li>
+              <li>Use tooling to test pages for accessibility</li>
+              <li><br /><br />Check if clients needs to comply with the EAA</li>
+              <li>And.. implement some things in our default toolset?</li>
+            </SlideList>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <client-only>
+              <Vue3Lottie
+                v-if="currentSlide === 16"
+                animationLink="logo.json"
+                :height="400"
+                :width="400"
+              />
+            </client-only>
           </SlideHolder>
         </div>
         <div
           :class="{
-            '!bg-leukeleu': currentSlide === totalSlides || currentSlide === 6,
+            '!bg-leukeleu': currentSlide === totalSlides || currentSlide === 7,
           }"
           class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 flex justify-center items-center text-center relative group overflow-hidden transition-colors [&>*]:absolute"
           ref="slideHolder"
@@ -215,7 +289,7 @@ const toPreviousSlide = () => {
           <SlideHolder :animationDirection="animationDirection">
             <SlideTitle
               label="Talk"
-              title="Accessibility in Vue"
+              title="Something about accessibility"
               subtitle="Rules and best practices"
               v-if="currentSlide === 1"
             />
@@ -240,18 +314,73 @@ const toPreviousSlide = () => {
           <SlideHolder :animationDirection="animationDirection">
             <SlideTitle
               v-if="currentSlide === 6"
-              title="How Vue can handle this"
+              title="Websites and apps"
+              subtitle="Companies with > &euro;2M revenue"
+              subsubtitle="Fines (probably) up to 4% of yearly revenue"
             />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
             <SlideTitle
               v-if="currentSlide === 7"
+              title="Accessibility in modern front-ends"
+              subtitle="Especially important in one-page applications (Nuxt)"
+            />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle
+              v-if="currentSlide === 8"
               title="Labels"
               subtitle="Following WCAG specs"
             />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideTitle title="Thanks" v-if="currentSlide === 10" />
+            <SlideTitle
+              v-if="currentSlide === 9"
+              title="Accessibility landmarks"
+              subtitle="Roles of elements - for screen readers"
+            />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle v-if="currentSlide === 10" title="Skiplinks" />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle
+              v-if="currentSlide === 11"
+              title="Focus management"
+              subtitle="For example in modals and changing form layouts"
+            />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle
+              v-if="currentSlide === 12"
+              title="Color modes"
+              subtitle="Also for special environments"
+              subsubtitle="Save user preference in profile"
+            />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle
+              v-if="currentSlide === 13"
+              title="Helpful tools"
+              subtitle="Tailwind's .sr-only class"
+            />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle
+              v-if="currentSlide === 14"
+              title="Helpful tools"
+              subtitle="ESLint configuration for accessibility"
+            />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle
+              v-if="currentSlide === 15"
+              title="So what now?"
+              subtitle="Panic! 😱 "
+            />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle title="Thanks" v-if="currentSlide === 16" />
           </SlideHolder>
         </div>
       </div>
