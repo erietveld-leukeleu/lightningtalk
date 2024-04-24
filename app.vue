@@ -7,6 +7,10 @@ const controlNext = ref<HTMLElement | null>(null);
 
 const animationDirection = ref<"UP" | "DOWN">("DOWN");
 
+import { useWindowFocus } from "@vueuse/core";
+
+const focused = useWindowFocus();
+
 onMounted(() => {
   if (slideHolder.value) {
     totalSlides.value = slideHolder.value.childNodes.length;
@@ -38,6 +42,18 @@ const toPreviousSlide = () => {
   animationDirection.value = "UP";
   setUrl();
 };
+
+watch(focused, (isFocused) => {
+  if (isFocused) controlNext.value?.focus();
+});
+
+const logoRotation = computed(
+  () => `transform: rotate(${currentSlide.value * 10}deg)`
+);
+
+const progressBar = computed(
+  () => `width: ${Math.ceil((currentSlide.value / totalSlides.value) * 100)}%`
+);
 </script>
 
 <template>
@@ -47,7 +63,7 @@ const toPreviousSlide = () => {
     </Head>
     <div class="bg-leukeleudarker w-full p-1 flex top-0">
       <div
-        :style="`width: ${Math.ceil((currentSlide / totalSlides) * 100)}%`"
+        :style="progressBar"
         class="bg-leukeleu h-1 transition-all duration-500 rounded-full"
       ></div>
     </div>
@@ -59,10 +75,11 @@ const toPreviousSlide = () => {
       >
         <NuxtImg
           src="logo-big.svg"
-          class="w-full"
+          class="w-full transition duration-400 ease-in-out"
           loading="lazy"
           width="100%"
           height="100%"
+          :style="logoRotation"
         />
       </div>
       <div class="px-6 pt-6 pb-9 flex min-h-screen relative z-10">
@@ -71,7 +88,7 @@ const toPreviousSlide = () => {
         >
           <div
             v-if="currentSlide !== totalSlides && currentSlide !== 1"
-            class="bg-leukeleu font-leukeleucontent tracking-wider inline-block py-1.5 w-[60px] truncate rounded-full mb-6 uppercase absolute top-2 left-2 z-10"
+            class="bg-leukeleu font-leukeleucontent tracking-wider inline-block py-1.5 w-[70px] truncate rounded-full mb-6 uppercase absolute top-2 left-2 z-10"
           >
             {{ currentSlide }} &bull; {{ totalSlides }}
           </div>
@@ -229,11 +246,50 @@ const toPreviousSlide = () => {
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
             <SlideList v-if="currentSlide === 15">
+              <li>Set a nice page title for every Nuxt page</li>
+              <li>Setup the <code>tabindex</code> attribute correctly</li>
+              <li>Notify the user that the page has changed</li>
+              <li>Focused styling on input elements</li>
               <li>
-                Do simple things always: like <code>alt</code> texts in images
+                Descriptive page loading
+                <svg
+                  class="w-4 h-4 text-gray-300 inline animate-spin"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z"
+                    stroke="leukeleudark"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path
+                    d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
+                    stroke="currentColor"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-gray-900"
+                  ></path>
+                </svg>
+              </li>
+              <li>...</li>
+            </SlideList>
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
+            <SlideList v-if="currentSlide === 16">
+              <li>
+                Check the basic rules for accessibility in every page you make
               </li>
               <li>Use packages to rapidly develop accessible code</li>
-              <li>Use tooling to test pages for accessibility</li>
+              <li>
+                Use tooling to test pages for accessibility (WAVE or AXE
+                Chrome-plugins)
+              </li>
               <li><br /><br />Check if clients needs to comply with the EAA</li>
               <li>And.. implement some things in our default toolset?</li>
             </SlideList>
@@ -241,7 +297,7 @@ const toPreviousSlide = () => {
           <SlideHolder :animationDirection="animationDirection">
             <client-only>
               <Vue3Lottie
-                v-if="currentSlide === 16"
+                v-if="currentSlide === 17"
                 animationLink="logo.json"
                 :height="400"
                 :width="400"
@@ -373,14 +429,17 @@ const toPreviousSlide = () => {
             />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
+            <SlideTitle v-if="currentSlide === 15" title=".. and more" />
+          </SlideHolder>
+          <SlideHolder :animationDirection="animationDirection">
             <SlideTitle
-              v-if="currentSlide === 15"
+              v-if="currentSlide === 16"
               title="So what now?"
               subtitle="Panic! 😱 "
             />
           </SlideHolder>
           <SlideHolder :animationDirection="animationDirection">
-            <SlideTitle title="Thanks" v-if="currentSlide === 16" />
+            <SlideTitle title="Thanks" v-if="currentSlide === 17" />
           </SlideHolder>
         </div>
       </div>

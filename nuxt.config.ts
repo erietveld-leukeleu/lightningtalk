@@ -15,8 +15,8 @@ export default defineNuxtConfig({
         colors: {
           transparent: 'transparent',
           current: 'currentColor',
-          'leukeleudark': '#55484b',
-          'leukeleudarker': '#42383a',
+          'leukeleudark': '#222222',
+          'leukeleudarker': '#4e3741',
           'leukeleu': '#EB4D7F',
           'white': '#FFFFFF'
         },
