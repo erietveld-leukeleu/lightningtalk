@@ -63,17 +63,10 @@ watch(focused, (isFocused) => {
           class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 max-w-[800px] min-w-[750px] flex justify-center items-center text-center relative group overflow-hidden mr-6 [&>*]:absolute"
         >
           <Current :currentSlide="currentSlide" :total-slides="totalSlides" />
-          <SlideHolder :animationDirection="animationDirection">
-            <div v-if="currentSlide === 1">
-              <client-only>
-                <Vue3Lottie
-                  animationLink="logo.json"
-                  :height="400"
-                  :width="400"
-                />
-              </client-only>
-            </div>
-          </SlideHolder>
+          <SlidesLeft
+            :animationDirection="animationDirection"
+            :currentSlide="currentSlide"
+          />
         </div>
         <div
           :class="{
@@ -88,15 +81,10 @@ watch(focused, (isFocused) => {
             @fire-next="toNextSlide"
             @fire-previous="toPreviousSlide"
           />
-
-          <SlideHolder :animationDirection="animationDirection">
-            <SlideTitle
-              label="Talk"
-              title="Onboarding a user"
-              subtitle="Some examples & AcademicTransfer"
-              v-if="currentSlide === 1"
-            />
-          </SlideHolder>
+          <SlidesRight
+            :animationDirection="animationDirection"
+            :currentSlide="currentSlide"
+          />
         </div>
       </div>
     </div>

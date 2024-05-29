@@ -9,7 +9,7 @@ const logoRotation = computed(
 </script>
 
 <template>
-  <div class="w-[120rem] h-[120rem] absolute -right-1/2 top-1/2 z-0 opacity-80">
+  <div class="w-[40rem] h-[40rem] absolute right-0 -bottom-1/2 z-0 opacity-80">
     <NuxtImg
       src="logo-big.svg"
       class="w-full transition duration-400 ease-in-out"
