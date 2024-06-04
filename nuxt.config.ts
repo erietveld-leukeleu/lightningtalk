@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   ],
   css: [
     '@/assets/css/main.css',
+    '@/assets/css/animations.css',
   ],
   tailwindcss: {
     config: {
@@ -15,8 +16,8 @@ export default defineNuxtConfig({
         colors: {
           transparent: 'transparent',
           current: 'currentColor',
-          'leukeleudark': '#222222',
-          'leukeleudarker': '#4e3741',
+          'leukeleudark': '#2b3238',
+          'leukeleudarker': '#354a5b',
           'leukeleu': '#EB4D7F',
           'white': '#FFFFFF'
         },
