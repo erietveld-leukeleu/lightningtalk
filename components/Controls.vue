@@ -1,8 +1,19 @@
 <script setup lang="ts">
-const props = defineProps<{
+import { useWindowFocus } from "@vueuse/core";
+
+const focused = useWindowFocus();
+const controlNext = ref<HTMLElement | null>(null);
+
+defineProps<{
   currentSlide: number;
   totalSlides: number;
 }>();
+
+onMounted(() => {
+  nextTick(() => {
+    controlNext.value?.focus();
+  });
+});
 
 const emit = defineEmits(["firePrevious", "fireNext"]);
 
@@ -14,9 +25,9 @@ function toNextSlide() {
   emit("fireNext");
 }
 
-const progressBar = computed(
-  () => `width: ${Math.ceil((props.currentSlide / props.totalSlides) * 100)}%`
-);
+watch(focused, (isFocused) => {
+  if (isFocused) controlNext.value?.focus();
+});
 </script>
 
 <template>

@@ -3,13 +3,7 @@ const currentSlide = ref<number>(1);
 const totalSlides = ref<number>(0);
 const slideHolder = ref<HTMLElement | null>(null);
 const presentationControls = ref<HTMLElement | null>(null);
-const controlNext = ref<HTMLElement | null>(null);
-
 const animationDirection = ref<"UP" | "DOWN">("DOWN");
-
-import { useWindowFocus } from "@vueuse/core";
-
-const focused = useWindowFocus();
 
 onMounted(() => {
   if (slideHolder.value) {
@@ -19,7 +13,6 @@ onMounted(() => {
     presentationControls.value.focus();
   }
   nextTick(() => {
-    controlNext.value?.focus();
     if (window.location.hash) {
       currentSlide.value = parseInt(window.location.hash.replace(/\D/g, ""));
     }
@@ -42,10 +35,6 @@ const toPreviousSlide = () => {
   animationDirection.value = "UP";
   setUrl();
 };
-
-watch(focused, (isFocused) => {
-  if (isFocused) controlNext.value?.focus();
-});
 </script>
 
 <template>
@@ -60,7 +49,7 @@ watch(focused, (isFocused) => {
       <BgLogo :currentSlide="currentSlide" />
       <div class="px-6 pt-6 pb-9 flex min-h-screen relative z-10">
         <div
-          class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 max-w-[800px] min-w-[750px] flex justify-center items-center text-center relative group overflow-hidden mr-6 [&>*]:absolute"
+          class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 max-w-[800px] min-w-[780px] flex justify-center items-center text-center relative group overflow-hidden mr-6 [&>*]:absolute"
         >
           <Current :currentSlide="currentSlide" :total-slides="totalSlides" />
           <SlidesLeft
