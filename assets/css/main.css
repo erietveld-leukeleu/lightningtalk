@@ -1,2 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@keyframes listitem-after {
+  to {
+    width: 1rem;
+  }
+}
+
+li:after {
+  width: 0;
+  animation: listitem-after 1s ease-in-out forwards;
+}
+
+ul li:nth-child(1):after {
+  animation-delay: 500ms;
+}
+
+ul li:nth-child(2):after {
+  animation-delay: 700ms;
+}
+
+ul li:nth-child(3):after {
+  animation-delay: 900ms;
+}
+
+ul li:nth-child(4):after {
+  animation-delay: 1100ms;
+}
+
+ul li:nth-child(5):after {
+  animation-delay: 1300ms;
+}
+
+ul li:nth-child(6):after {
+  animation-delay: 1500ms;
+}
+
+ul li:nth-child(7):after {
+  animation-delay: 1700ms;
+}
+
+ul li:nth-child(8):after {
+  animation-delay: 1900ms;
+}
