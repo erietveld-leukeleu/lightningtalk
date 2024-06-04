@@ -7,7 +7,6 @@ defineProps<{
   link?: string;
   linktext?: string;
   image?: string;
-  video?: string;
 }>();
 </script>
 
@@ -32,10 +31,8 @@ defineProps<{
     <div class="absolute bottom-[200px] -left-1/2 w-[900px]" v-if="image">
       <NuxtImg :src="image" loading="lazy" width="900" class="block" />
     </div>
-    <div class="absolute bottom-[200px] -left-10 w-[900px]" v-if="video">
-      <video width="720" height="350" loop autoplay>
-        <source :src="video" type="video/mp4" />
-      </video>
+    <div class="mt-8 flex justify-center" v-if="$slots.animation">
+      <slot name="animation"> &nbsp; </slot>
     </div>
   </section>
 </template>
