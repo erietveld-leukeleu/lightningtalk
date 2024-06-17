@@ -7,6 +7,7 @@ defineProps<{
   link?: string;
   linktext?: string;
   image?: string;
+  animateIn?: boolean;
 }>();
 </script>
 
@@ -32,7 +33,8 @@ defineProps<{
       <NuxtImg :src="image" loading="lazy" width="900" class="block" />
     </div>
     <div
-      class="mt-8 flex justify-center animate-height-100"
+      class="mt-8 flex justify-center"
+      :class="{ 'animate-height-100': animateIn }"
       v-if="$slots.animation"
     >
       <slot name="animation"> &nbsp; </slot>

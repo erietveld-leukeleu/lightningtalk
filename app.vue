@@ -4,10 +4,11 @@ const totalSlides = ref<number>(0);
 const slideHolder = ref<HTMLElement | null>(null);
 const presentationControls = ref<HTMLElement | null>(null);
 const animationDirection = ref<"UP" | "DOWN">("DOWN");
+const focusBackgroundSlides = [9,16];
 
 onMounted(() => {
   if (slideHolder.value) {
-    totalSlides.value = slideHolder.value.childNodes.length;
+    totalSlides.value = 17
   }
   if (presentationControls.value) {
     presentationControls.value.focus();
@@ -59,9 +60,9 @@ const toPreviousSlide = () => {
         </div>
         <div
           :class="{
-            '!bg-leukeleu': currentSlide === totalSlides || currentSlide === 7,
+            '!bg-leukeleu': currentSlide === totalSlides || focusBackgroundSlides.includes(currentSlide),
           }"
-          class="bg-leukeleudarker rounded-xl py-3 px-8 flex-1 flex justify-center items-center text-center relative group overflow-hidden transition-colors [&>*]:absolute"
+          class="bg-leukeleudarker bg-opacity-90 rounded-xl py-3 px-8 flex-1 flex justify-center items-center text-center relative group overflow-hidden transition-colors [&>*]:absolute"
           ref="slideHolder"
         >
           <Controls

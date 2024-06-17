@@ -40,4 +40,43 @@ defineProps<{
   <SlideHolder :animationDirection="animationDirection">
     <SlideTitle title="Giving feedback" v-if="currentSlide === 4" />
   </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Communicate a change of state" v-if="currentSlide === 5" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Showing hierarchy of complex data" v-if="currentSlide === 6" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Learning how to interact" v-if="currentSlide === 7" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Because it's fun ✨" v-if="currentSlide === 8" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="When to (not) use animation" v-if="currentSlide === 9" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Timing" subtitle="The order of things" v-if="currentSlide === 10" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Duration" subtitle="The speed of the animation" v-if="currentSlide === 11" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Easing" subtitle="Natural movement" v-if="currentSlide === 12" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Triggers" subtitle="Immediate feedback" v-if="currentSlide === 13" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Fluidity" subtitle="To make things more fun" v-if="currentSlide === 14" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="Appeal" subtitle="To emphasize positive feedback" v-if="currentSlide === 15" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="So.." v-if="currentSlide === 16" />
+  </SlideHolder>
+  <SlideHolder :animationDirection="animationDirection">
+    <SlideTitle title="The end" v-if="currentSlide === 17" />
+  </SlideHolder>
 </template>
