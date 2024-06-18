@@ -1,9 +1,11 @@
 @keyframes animation-height-100 {
   0% {
     height: 0;
+    opacity: 0;
   }
   100% {
     height: 100px;
+    opacity: 1;
   }
 }
 
@@ -11,6 +13,7 @@
   height: 0;
   animation: animation-height-100 400ms ease-in-out forwards 1;
   animation-delay: 1.5s;
+  opacity: 0;
 }
 
 /* =-=-==-=-=-=-=-==-=-=-=----=-===--=-==--==- */
@@ -130,4 +133,297 @@
 
 /* =-=-==-=-=-=-=-==-=-=-=----=-===--=-==--==- */
 
+@keyframes animation-buttonyay {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(0.6);
+  }
+  10% {
+    transform: scale(1.3);
+  }
+  30% {
+    transform: scale(1);
+  }
+}
 
+@keyframes animation-buttonyaysvg {
+  0% {
+    transform: rotate(0);
+  }
+  5% {
+    transform: rotate(-40deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes animation-buttonyaycircle1 {
+  0% {
+    margin-left: 0;
+    opacity: 0;
+    transform: scale(0);
+  }
+  2% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  30% {
+    margin-left: 30px;
+    opacity: 1;
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes animation-buttonyaycircle2 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  1% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+  45% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes animation-buttonyaycircle3 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  4% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  21% {
+    opacity: 1;
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes animation-buttonyaycircle4 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  3% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+  40% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes animation-buttonyayspans {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
+}
+
+.animationelement-buttonyay {
+  @apply w-24 h-24 flex justify-center items-center relative;
+  animation: animation-buttonyay 3000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-buttonyay-circle {
+  @apply rounded-full w-16 h-16 border-4 border-leukeleu bg-leukeleu bg-opacity-10 flex justify-center items-center;
+}
+
+.animationelement-buttonyay-circle svg {
+  @apply block fill-leukeleu w-8 h-8;
+  animation: animation-buttonyaysvg 3000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-buttonyay-ani {
+  @apply w-24 h-24 flex justify-center items-center absolute top-0 left-0 right-0 bottom-0;
+  animation: animation-buttonyayspans 3000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-buttonyay-ani span {
+  @apply absolute w-2 h-2 rounded-full bg-leukeleu opacity-0
+}
+
+.animationelement-buttonyay-ani span:nth-child(1) { @apply right-0 }
+.animationelement-buttonyay-ani span:nth-child(2) { @apply right-1 top-[20px] }
+.animationelement-buttonyay-ani span:nth-child(3) { @apply left-0 }
+.animationelement-buttonyay-ani span:nth-child(4) { @apply left-3 bottom-[10px] }
+
+.animationelement-buttonyay-ani span:nth-child(1) { 
+  animation: animation-buttonyaycircle1 3000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-buttonyay-ani span:nth-child(2) { 
+  animation: animation-buttonyaycircle2 3000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-buttonyay-ani span:nth-child(3) { 
+  animation: animation-buttonyaycircle3 3000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-buttonyay-ani span:nth-child(4) { 
+  animation: animation-buttonyaycircle4 3000ms ease-out forwards infinite 4s;
+}
+
+/* =-=-==-=-=-=-=-==-=-=-=----=-===--=-==--==- */
+
+@keyframes animation-status {
+  0% {
+    background: rgba(170, 170, 170, 0.4);
+  }
+  20% {
+    background: rgba(170, 170, 170, 0.4);
+    border-color: #AAAAAA;
+  }
+  30% {
+    background: #7FFFD4;
+    border-color: #7FFFD4;
+  }
+  80% {
+    background: #7FFFD4;
+    border-color: #7FFFD4;
+  }
+  90% {
+    background: rgba(170, 170, 170, 0.4);
+    border-color: #AAAAAA;
+  }
+  100% {
+    background: rgba(170, 170, 170, 0.4);
+  }
+}
+
+@keyframes animation-status-text {
+  0% {
+    background: #AAAAAA;
+  }
+  20% {
+    background: #AAAAAA;
+    width: 80px;
+  }
+  30% {
+    background: #3a413f;
+    width: 90px;
+  }
+  80% {
+    background: #3a413f;
+    width: 90px;
+  }
+  90% {
+    background: #AAAAAA;
+    width: 80px;
+  }
+  100% {
+    background: #AAAAAA;
+  }
+}
+
+@keyframes animation-status-svg {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 0;
+    opacity: 0;
+  }
+  30% {
+    width: 1rem;
+    opacity: 1;
+  }
+  80% {
+    width: 1rem;
+    opacity: 1;
+  }
+  90% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes animation-status-svg-element {
+  0% {
+    transform: scale(0.5) translateY(10px);
+  }
+  20% {
+    transform: scale(0.5) translateY(10px);
+  }
+  30% {
+    transform: scale(1) translateY(0);
+  }
+  80% {
+    transform: scale(1) translateY(0);
+  }
+  90% {
+    transform: scale(0.5) translateY(10px);
+  }
+  100% {
+    transform: scale(0.5) translateY(10px);
+  }
+}
+
+.animationelement-status {
+  @apply w-44 h-10 rounded-xl bg-leukeleugray border-leukeleugray border-4 bg-opacity-40 relative overflow-hidden flex gap-2 justify-start items-center px-3;
+  animation: animation-status 5000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-status-text {
+  @apply block w-20 h-3 rounded-full bg-leukeleugray;
+  animation: animation-status-text 5000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-status-check {
+  @apply w-0 opacity-0;
+  animation: animation-status-svg 5000ms ease-out forwards infinite 4s;
+}
+
+.animationelement-status-check svg {
+  @apply w-4 h-4 fill-leukeleusuccesstext;
+  animation: animation-status-svg-element 5000ms ease-out forwards infinite 4s;
+}

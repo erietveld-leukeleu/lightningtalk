@@ -33,7 +33,7 @@ defineProps<{
   </SlideHolder>
   <SlideHolder :animationDirection="animationDirection">
     <SlideList v-if="currentSlide === 4">
-      <li>A user's action is recognized by the app</li>
+      <li>To show a user's action is recognized</li>
       <li>Prevent change blindness: the action triggers something else on the page</li>
       <li>Mimicking the &lsquo;real world&rsquo; movement: pressing a button</li>
       <li>Prevent confusion: opening an overlay</li>
@@ -69,7 +69,7 @@ defineProps<{
   <SlideHolder :animationDirection="animationDirection">
     <SlideList v-if="currentSlide === 8">
       <li>Branding: background videos, frame animations</li>
-      <li>To make your website more fun and memorable</li> <!-- Scroll animations -->
+      <li>To make the application more fun and memorable</li> <!-- Scroll animations -->
       <li>Animations can be really distracting</li>
       <li>Animations can slow down the experience</li>
     </SlideList>
