@@ -69,7 +69,7 @@ defineProps<{
   <SlideHolder :animationDirection="animationDirection">
     <SlideList v-if="currentSlide === 8">
       <li>Branding: background videos, frame animations</li>
-      <li>To make your website more fun and memorable</li> <!-- Scroll animations -->
+      <li>To make the application more fun and memorable</li> <!-- Scroll animations -->
       <li>Animations can be really distracting</li>
       <li>Animations can slow down the experience</li>
     </SlideList>

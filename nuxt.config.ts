@@ -18,7 +18,10 @@ export default defineNuxtConfig({
           current: 'currentColor',
           'leukeleudark': '#2b3238',
           'leukeleudarker': '#354a5b',
+          'leukeleugray': '#AAAAAA',
           'leukeleu': '#EB4D7F',
+          'leukeleusuccess': '#7FFFD4',
+          'leukeleusuccesstext': '#3a413f',
           'white': '#FFFFFF'
         },
         extend: {
