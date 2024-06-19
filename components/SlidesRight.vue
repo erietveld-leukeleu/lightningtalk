@@ -67,7 +67,24 @@ defineProps<{
     </SlideTitle>
   </SlideHolder>
   <SlideHolder :animationDirection="animationDirection">
-    <SlideTitle title="Showing hierarchy of complex data" v-if="currentSlide === 6" />
+    <SlideTitle title="Showing hierarchy of data" v-if="currentSlide === 6">
+      <template #animation>
+        <div class="animationelement-zoom">
+          <div class="animationelement-zoom-start">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1.859 6l-.489-2h21.256l-.491 2h-20.276zm1.581-4l-.439-2h17.994l-.439 2h-17.116zm20.56 16h-24l2 6h20l2-6zm-20.896-2l-.814-6h19.411l-.839 6h2.02l1.118-8h-24l1.085 8h2.019zm2.784-3.995c-.049-.555.419-1.005 1.043-1.005.625 0 1.155.449 1.185 1.004.03.555-.438 1.005-1.044 1.005-.605 0-1.136-.449-1.184-1.004zm7.575-.224l-1.824 2.68-1.813-1.312-2.826 2.851h10l-3.537-4.219z"/></svg>
+            <span>6</span>
+          </div>
+          <div class="animationelement-zoom-grid">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </template>
+    </SlideTitle>
   </SlideHolder>
   <SlideHolder :animationDirection="animationDirection">
     <SlideTitle title="Learning how to interact" v-if="currentSlide === 7" />

@@ -8,7 +8,7 @@ defineProps<{
 <template>
   <section>
     <div class="relative bg-leukeleudark shadow-leukeleu">
-      <NuxtImg :src="image" loading="lazy" width="1100" class="block" />
+      <NuxtImg :src="image" loading="lazy" width="800" class="block" />
     </div>
   </section>
 </template>

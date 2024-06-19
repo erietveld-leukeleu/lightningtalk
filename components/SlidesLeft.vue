@@ -11,6 +11,14 @@ defineProps<{
       <client-only>
         <Vue3Lottie animationLink="logo.json" :height="600" :width="600" />
       </client-only>
+      <div class="overflow-hidden h-1">
+        <NuxtImg src="/animation-timing.gif" loading="eager" width="800" class="block opacity-0" />
+        <NuxtImg src="/animation-duration.gif" loading="eager" width="800" class="block opacity-0" />
+        <NuxtImg src="/animation-easing.gif" loading="eager" width="800" class="block opacity-0" />
+        <NuxtImg src="/animation-triggers.gif" loading="eager" width="800" class="block opacity-0" />
+        <NuxtImg src="/animation-exaggeration.gif" loading="eager" width="800" class="block opacity-0" />
+        <NuxtImg src="/animation-appeal.gif" loading="eager" width="800" class="block opacity-0" />
+      </div>
     </div>
   </SlideHolder>
   <SlideHolder :animationDirection="animationDirection">
@@ -18,7 +26,7 @@ defineProps<{
       <li><strong>01</strong> &nbsp; Drawing attention</li>
       <li><strong>02</strong> &nbsp; Giving feedback</li>
       <li><strong>03</strong> &nbsp; Communicate a change of state</li>
-      <li><strong>04</strong> &nbsp; Showing hierarchy of complex data</li>
+      <li><strong>04</strong> &nbsp; Showing hierarchy of data</li>
       <li><strong>05</strong> &nbsp; Learning how to interact</li>
       <li><strong>06</strong> &nbsp; Because it's fun ✨</li>
     </SlideList>
@@ -60,10 +68,10 @@ defineProps<{
   </SlideHolder>
   <SlideHolder :animationDirection="animationDirection">
     <SlideList v-if="currentSlide === 7">
-      <li>Often when initializing a page</li>
       <li>Small and short tutorial</li>
       <li>Onboarding: lead the eye of the user to important functionality</li>
       <li>Short animated tooltip or popover</li>
+      <li>Should be dismissable (fast)</li>
     </SlideList>
   </SlideHolder>
   <SlideHolder :animationDirection="animationDirection">
@@ -105,12 +113,11 @@ defineProps<{
   </SlideHolder>
   <SlideHolder :animationDirection="animationDirection">
     <SlideList v-if="currentSlide === 16">
-      <li>For enhancing the experience</li>
-      <li>When they are consistent</li>
+      <li>Enhancing the experience</li>
+      <li>Consistent with branding</li>
       <li>Clarity over entertainment</li>
-      <li>Performant and rapid</li>
-      <li>Test on all devices and browsers</li>
-      <li>Provide accessibility</li>
+      <li>Performant and rapid (testing)</li>
+      <li>Accessibility</li>
       <li>Users must feel like they are in control</li>
     </SlideList>
   </SlideHolder>

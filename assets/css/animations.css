@@ -427,3 +427,69 @@
   @apply w-4 h-4 fill-leukeleusuccesstext;
   animation: animation-status-svg-element 5000ms ease-out forwards infinite 4s;
 }
+
+/* =-=-==-=-=-=-=-==-=-=-=----=-===--=-==--==- */
+
+@keyframes animation-zoom {
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes animation-zoom-grid {
+  25% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.animationelement-zoom {
+  @apply w-[180px] h-[120px] relative;
+}
+
+.animationelement-zoom-start {
+  @apply w-[180px] h-[120px] bg-leukeleu border-leukeleu border-4 rounded-lg bg-opacity-20 absolute top-[10px] flex justify-center items-center;
+  animation: animation-zoom 8000ms ease-in forwards infinite 4s;
+}
+
+.animationelement-zoom-start svg {
+  @apply fill-leukeleu w-12 h-12;
+}
+
+.animationelement-zoom-start span {
+  @apply text-leukeleu text-lg block absolute bottom-2 right-3 font-bold
+}
+
+.animationelement-zoom-grid {
+  @apply grid grid-cols-2 gap-2 absolute w-[200px] -left-[10px] opacity-0 scale-125;
+  animation: animation-zoom-grid 8000ms ease-in forwards infinite 4s;
+}
+
+.animationelement-zoom-grid span {
+  @apply block h-16 bg-leukeleu border-leukeleu border-4 rounded-lg;
+}
